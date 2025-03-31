@@ -7,6 +7,7 @@
   font-weight: 500;
   transition: all 0.3s ease-in-out;
   border: none;
+  cursor: pointer;
 }
 
 .greenbtn {
@@ -30,7 +31,6 @@
   }
 }
 
-// Центрирование кнопок на маленьких экранах
 @media (max-width: 768px) {
   .greenbtn,
   .whitebtn {
