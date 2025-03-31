@@ -2,8 +2,10 @@
   max-width: 1800px;
   padding: 20px 15px;
   margin: 0 auto;
-  background-color: black;
   border-bottom: 1px solid #8a8a8a;
+  z-index: 999;
+  background-color: #ffffff;
+  color: black;
 }
 
 .links {
@@ -13,7 +15,7 @@
 }
 
 .linksitem {
-  color: #ffffff;
+  color: #000000;
   font-family: "DM Sans", sans-serif;
   font-size: 16px;
   text-transform: uppercase;
@@ -42,9 +44,9 @@
     height: 28px;
     outline: none;
     border: none;
-    border-bottom: 1px solid #ffffff;
     background: transparent;
-    color: #ffffff;
+    padding: 20px 0;
+    color: #000000;
     font-family: "DM Sans", sans-serif;
     font-size: 16px;
 
@@ -63,6 +65,46 @@
   color: white;
   padding: 5px;
   font-size: 14px;
+}
+
+.homeHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 999;
+}
+
+.homeHeader .linksitem {
+  color: #ffffff;
+}
+
+.homeHeader .search input {
+  border-bottom: 1px solid #ffffff;
+}
+
+.homeHeader .search input::placeholder {
+  color: #ffffff;
+}
+
+.homeSearch {
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.homeSearch::placeholder {
+  color: #ffffff;
+}
+
+.defaultSearch {
+  border-bottom: 1px solid #000000;
+  color: #000000;
+}
+
+.defaultSearch::placeholder {
+  color: #000000;
 }
 
 @media (max-width: 1024px) {

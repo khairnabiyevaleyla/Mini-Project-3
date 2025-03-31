@@ -1,0 +1,40 @@
+.greenbtn,
+.whitebtn {
+  width: 295px;
+  height: 55px;
+  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+
+.greenbtn {
+  background: #00312d;
+  border-color: #00312d;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+.whitebtn {
+  background-color: #ffffff;
+  color: black;
+
+  &:hover {
+    background: #00312d;
+    color: #ffffff;
+  }
+}
+
+// Центрирование кнопок на маленьких экранах
+@media (max-width: 768px) {
+  .greenbtn,
+  .whitebtn {
+    width: 100%;
+    max-width: 295px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import style from "./style.module.scss";
 import { useTranslation } from "react-i18next";
 import { useCookies } from "react-cookie";
@@ -8,6 +8,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [cookies, setCookie] = useCookies(["lang"]);
   const [lang, setLang] = useState(cookies.lang ?? "en");
+  const location = useLocation();
 
   useEffect(() => {
     i18n.changeLanguage(lang);
@@ -33,8 +34,14 @@ const Header = () => {
     { name: t("navbar.cart"), url: "/cart" },
   ];
 
+  const isHomePage = location.pathname === "/";
+
   return (
-    <header className={style.container}>
+    <header
+      className={`${style.container} ${
+        isHomePage ? style.homeHeader : style.defaultHeader
+      }`}
+    >
       <nav>
         <div className="grid grid-cols-4 gap-5 justify-center items-center">
           {/* Left Links */}
@@ -63,6 +70,7 @@ const Header = () => {
               name="search"
               id="search"
               placeholder={t("navbar.search")}
+              className={isHomePage ? style.homeSearch : style.defaultSearch}
             />
           </div>
 
