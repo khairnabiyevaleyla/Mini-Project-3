@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "@/component/shared/Banner/Banner";
 import MarqueeList from "@/component/MarqueeList/MarqueeList";
+import PrimaryCategories from "@/component/PrimaryCategories/PrimaryCategories";
 
 const HomeTemplate = () => {
   return (
@@ -12,6 +13,7 @@ const HomeTemplate = () => {
         text="Explore Our Enchanted Collection: Deep Dark Coffee Bean Season"
       />
       <MarqueeList />
+      <PrimaryCategories />
     </>
   );
 };

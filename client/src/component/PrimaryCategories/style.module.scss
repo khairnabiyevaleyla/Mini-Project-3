@@ -1,0 +1,56 @@
+.image {
+  width: 100%;
+  max-width: 345px;
+  height: 464px;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background-color: #8ba761;
+  color: white;
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  padding: 8px 20px;
+  transform: rotate(45deg) translate(33%, -50%);
+  transform-origin: top right;
+  white-space: nowrap;
+  width: 100%;
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 6px 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 10px;
+    padding: 5px 12px;
+  }
+}
+
+.productname {
+  p {
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+    font-family: "Amiri", serif;
+    font-style: italic;
+  }
+}

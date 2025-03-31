@@ -12,12 +12,13 @@
 
 .greenbtn {
   background: #00312d;
-  border-color: #00312d;
+  border-color: 1px solid #00312d;
   color: #ffffff;
 
   &:hover {
     background-color: #ffffff;
     color: black;
+    border-color: 1px solid #00312d;
   }
 }
 
@@ -34,7 +35,6 @@
 @media (max-width: 768px) {
   .greenbtn,
   .whitebtn {
-    width: 100%;
     max-width: 295px;
   }
 }
