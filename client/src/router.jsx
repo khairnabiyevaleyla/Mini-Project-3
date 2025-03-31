@@ -27,6 +27,8 @@ export const router = createBrowserRouter([
         path: "/blog/:id",
         element: <div>Blog Detail</div>,
       },
+      { path: "/wishlist", element: <div>Wishlist</div> },
+      { path: "/cart", element: <div>Cart</div> },
     ],
   },
   {
