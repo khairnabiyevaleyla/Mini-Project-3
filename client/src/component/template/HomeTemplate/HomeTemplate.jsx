@@ -4,6 +4,7 @@ import MarqueeList from "@/component/MarqueeList/MarqueeList";
 import PrimaryCategories from "@/component/PrimaryCategories/PrimaryCategories";
 import SplitHeroSection from "@/component/shared/SplitHeroSection/SplitHeroSection";
 import ProductSlides from "@/component/ProductSlides/ProductSlides";
+import CollectionBanner from "@/component/CollectionBanner/CollectionBanner";
 
 const HomeTemplate = () => {
   return (
@@ -27,6 +28,12 @@ const HomeTemplate = () => {
         title="SPECIALTY ICED COFFEE AND COLD BREW KITS"
         description="Our meticulous roasting process ensures a cup that is rich, smooth, and full of flavor."
         reverse="true"
+      />
+      <CollectionBanner />
+      <Banner
+        image="https://new-ella.myshopify.com/cdn/shop/files/slideshow-8.png?v=1733293885&width=1880"
+        title="BEST ESPRESSO EXPERIENCE"
+        text="Our beans are carefully roasted to deliver a perfect balance of flavor and aroma, making every cup extraordinary."
       />
     </>
   );

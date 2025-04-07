@@ -14,13 +14,12 @@
 
 .greenbtn {
   background: #00312d;
-  border-color: 1px solid #00312d;
+  border: 1px solid #00312d;
   color: #ffffff;
-
   &:hover {
     background-color: #ffffff;
     color: black;
-    border-color: 1px solid #00312d;
+    border: 1px solid #00312d;
   }
 }
 

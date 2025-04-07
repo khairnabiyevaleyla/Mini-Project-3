@@ -1,0 +1,113 @@
+.banner {
+  background-image: url("https://new-ella.myshopify.com/cdn/shop/files/spotlight-bg_1920x.png?v=1733296227");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-x;
+  margin-top: 65px;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+
+  h1 {
+    font-size: 70px;
+    font-family: "Amiri", serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #232323;
+    width: 70%;
+    line-height: 65px;
+    @media (max-width: 1024px) {
+      font-size: 50px;
+    }
+    @media (max-width: 768px) {
+      font-size: 40px;
+    }
+    @media (max-width: 480px) {
+      font-size: 32px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    color: #3c3c3c;
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+}
+
+.image {
+  width: 440px;
+  height: 557px;
+  overflow: hidden;
+  position: relative;
+  &:hover img {
+    transform: scale(1.1);
+  }
+  &:hover span {
+    opacity: 1;
+    font-size: 18px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.title {
+  position: absolute;
+  top: 43%;
+  left: 12%;
+  text-align: center;
+
+  h4 {
+    font-size: 40px;
+    font-family: "Amiri", serif;
+    font-weight: 400;
+    color: #ffffff;
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+    @media (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+
+  span {
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: underline;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+
+    i {
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+}
