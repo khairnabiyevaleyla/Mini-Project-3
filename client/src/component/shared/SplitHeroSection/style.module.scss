@@ -12,24 +12,6 @@
   background-attachment: scroll;
 }
 
-@media (max-width: 1024px) {
-  .section {
-    min-height: 600px;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    min-height: 500px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section {
-    min-height: 400px;
-  }
-}
-
 .content {
   position: absolute;
   max-width: 500px;
@@ -40,6 +22,12 @@
 
 .reverse {
   flex-direction: row-reverse;
+}
+
+.reverse .content {
+  left: auto;
+  right: 5%;
+  text-align: right;
 }
 
 .heading {
@@ -61,10 +49,18 @@
 }
 
 @media (max-width: 1024px) {
+  .section {
+    min-height: 600px;
+  }
+
   .content {
     top: 10%;
     left: 5%;
     max-width: 400px;
+  }
+
+  .reverse .content {
+    right: 5%;
   }
 
   .heading {
@@ -74,9 +70,7 @@
 
 @media (max-width: 768px) {
   .section {
-    display: flex;
     flex-direction: column !important;
-    text-align: center;
     justify-content: flex-start;
     padding: 4rem 2rem;
   }
@@ -84,6 +78,10 @@
   .content {
     position: static;
     max-width: 100%;
+    text-align: center;
+  }
+
+  .reverse .content {
     text-align: center;
   }
 

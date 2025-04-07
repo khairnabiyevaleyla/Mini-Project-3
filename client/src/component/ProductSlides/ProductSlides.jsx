@@ -9,6 +9,7 @@ import { getApi } from "@/http/api";
 import ProductsCards from "@/component/shared/ProductsCards/ProductsCards";
 import SectionHeading from "@/component/shared/SectionHeading/SectionHeading";
 import BlackButton from "@/component/shared/Buttons/BlackButton";
+import LightButton from "@/component/shared/Buttons/LightButton";
 
 const ProductSlides = () => {
   const prevRef = useRef(null);
@@ -75,6 +76,10 @@ const ProductSlides = () => {
             </div>
           </SwiperSlide>
         ))}
+        <div className="flex justify-center items-center gap-4 my-10">
+          {" "}
+          <LightButton title="Shop All" />
+        </div>
       </Swiper>
     </div>
   );

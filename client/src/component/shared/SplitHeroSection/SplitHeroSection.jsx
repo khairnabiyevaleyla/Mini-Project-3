@@ -16,7 +16,6 @@ const SplitHeroSection = ({
       <div className={styles.content}>
         <h2 className={styles.heading}>{title}</h2>
         <p className={styles.desc}>{description}</p>
-
         <LightButton title="Shop Now" />
       </div>
     </div>

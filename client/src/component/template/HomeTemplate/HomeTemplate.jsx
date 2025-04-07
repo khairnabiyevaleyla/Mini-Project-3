@@ -22,6 +22,12 @@ const HomeTemplate = () => {
         description="Each batch is roasted to highlight the unique characteristics of the beans, making every cup a true delight."
       />
       <ProductSlides />
+      <SplitHeroSection
+        backgroundImage="https://new-ella.myshopify.com/cdn/shop/files/slideshow-5.png?v=1733293884&width=1880"
+        title="SPECIALTY ICED COFFEE AND COLD BREW KITS"
+        description="Our meticulous roasting process ensures a cup that is rich, smooth, and full of flavor."
+        reverse="true"
+      />
     </>
   );
 };
