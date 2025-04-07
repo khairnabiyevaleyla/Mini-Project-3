@@ -2,6 +2,8 @@ import React from "react";
 import Banner from "@/component/shared/Banner/Banner";
 import MarqueeList from "@/component/MarqueeList/MarqueeList";
 import PrimaryCategories from "@/component/PrimaryCategories/PrimaryCategories";
+import SplitHeroSection from "@/component/shared/SplitHeroSection/SplitHeroSection";
+import ProductSlides from "@/component/ProductSlides/ProductSlides";
 
 const HomeTemplate = () => {
   return (
@@ -14,6 +16,12 @@ const HomeTemplate = () => {
       />
       <MarqueeList />
       <PrimaryCategories />
+      <SplitHeroSection
+        backgroundImage="https://new-ella.myshopify.com/cdn/shop/files/slideshow-2.png?v=1733305166&width=1880"
+        title="PINNACLE INSTANT COFFEE, REINVENTED"
+        description="Each batch is roasted to highlight the unique characteristics of the beans, making every cup a true delight."
+      />
+      <ProductSlides />
     </>
   );
 };

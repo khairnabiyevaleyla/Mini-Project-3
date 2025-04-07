@@ -1,5 +1,7 @@
 .greenbtn,
-.whitebtn {
+.whitebtn,
+.lightbtn,
+.blackbtn {
   width: 295px;
   height: 55px;
   font-size: 18px;
@@ -32,9 +34,31 @@
   }
 }
 
+.lightbtn {
+  background-color: #ffffff;
+  color: black;
+
+  &:hover {
+    background: black;
+    color: #ffffff;
+  }
+}
+.blackbtn {
+  background-color: black;
+  color: #ffffff;
+  border: 1px solid black;
+
+  &:hover {
+    background: #ffffff;
+    color: black;
+    border: 1px solid black;
+  }
+}
+
 @media (max-width: 768px) {
   .greenbtn,
-  .whitebtn {
+  .whitebtn,
+  .lightbtn {
     max-width: 295px;
   }
 }
