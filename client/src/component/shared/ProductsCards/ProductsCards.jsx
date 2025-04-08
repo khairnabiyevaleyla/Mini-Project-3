@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Heart, Eye } from "lucide-react";
 import { useWishlist } from "@/context/WishlistContext";
 import ProductModal from "@/component/ProductModal/ProductModal";
+import BlackButton from "@/component/shared/Buttons/BlackButton";
 
 const ProductsCards = ({
   id,
@@ -71,14 +72,18 @@ const ProductsCards = ({
               <Eye size={22} className="stroke-black" />
             </button>
           </div>
-          <div className="mt-4">
-            <h6 className="text-lg font-medium">{name}</h6>
-            <p className="flex gap-2 mt-1">
-              {oldprice && (
-                <span className="text-gray-500 line-through">${oldprice}</span>
-              )}
-              <span className="font-bold">${finalprice}</span>
-            </p>
+        </div>
+
+        <div className="mt-4 px-1 pb-4">
+          <h6 className="text-lg font-medium truncate">{name}</h6>
+          <p className="flex gap-2 mt-1">
+            {oldprice && (
+              <span className="text-gray-500 line-through">${oldprice}</span>
+            )}
+            <span className="font-bold">${finalprice}</span>
+          </p>
+          <div className="mt-3">
+            <BlackButton title="Quick add" product={product} />
           </div>
         </div>
       </div>

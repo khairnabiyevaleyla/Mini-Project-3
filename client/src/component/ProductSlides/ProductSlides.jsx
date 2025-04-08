@@ -8,7 +8,6 @@ import { QueryKeys } from "@/constant/QuerieKeys";
 import { getApi } from "@/http/api";
 import ProductsCards from "@/component/shared/ProductsCards/ProductsCards";
 import SectionHeading from "@/component/shared/SectionHeading/SectionHeading";
-import BlackButton from "@/component/shared/Buttons/BlackButton";
 import LightButton from "@/component/shared/Buttons/LightButton";
 
 const ProductSlides = () => {
@@ -75,9 +74,6 @@ const ProductSlides = () => {
           return (
             <SwiperSlide key={card.id}>
               <ProductsCards {...product} />
-              <div className="mx-5 my-5">
-                <BlackButton title="Quick add" product={product} />
-              </div>
             </SwiperSlide>
           );
         })}

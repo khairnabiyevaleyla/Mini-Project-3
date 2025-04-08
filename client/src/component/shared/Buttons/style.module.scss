@@ -2,7 +2,6 @@
 .whitebtn,
 .lightbtn,
 .blackbtn {
-  width: 295px;
   height: 55px;
   font-size: 18px;
   font-family: "DM Sans", sans-serif;
@@ -13,6 +12,7 @@
 }
 
 .greenbtn {
+  width: 295px;
   background: #00312d;
   border: 1px solid #00312d;
   color: #ffffff;
@@ -24,6 +24,7 @@
 }
 
 .whitebtn {
+  width: 295px;
   background-color: #ffffff;
   color: black;
 
@@ -34,6 +35,7 @@
 }
 
 .lightbtn {
+  width: 295px;
   background-color: #ffffff;
   color: black;
   border: 1px solid black;
@@ -44,6 +46,7 @@
   }
 }
 .blackbtn {
+  width: 100%;
   background-color: black;
   color: #ffffff;
   border: 1px solid black;
