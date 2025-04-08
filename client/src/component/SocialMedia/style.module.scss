@@ -1,0 +1,62 @@
+.container {
+  background-image: url("https://new-ella.myshopify.com/cdn/shop/files/instagram-bg_1920x.jpg?v=1733296228");
+  padding: 16px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: #28211b;
+    font-size: 16px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+  }
+  span {
+    color: #28211b;
+    font-size: 18px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid #28211b;
+    padding-bottom: 5px;
+    i {
+      color: #28211b;
+      font-size: 18px;
+    }
+  }
+}
+
+.image {
+  width: 345px;
+  height: 345px;
+  overflow: hidden;
+  &:hover img {
+    transform: scale(1.1);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+.slogan {
+  width: 345px;
+  height: 345px;
+  background-color: #00312d;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 35px;
+  span {
+    color: #fff;
+    font-size: 50px;
+    font-family: "Amiri", serif;
+    font-weight: 500;
+  }
+}

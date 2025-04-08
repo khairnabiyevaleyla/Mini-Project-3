@@ -67,16 +67,28 @@
   gap: 5px;
   transition: 0.5s ease-in-out;
   opacity: 0;
-  i {
+
+  button {
     width: 35px;
     height: 35px;
     background-color: #fff;
     color: #000;
     border-radius: 50%;
-    font-size: 22px;
-    padding: 1px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
   }
 }
+
 .content {
   position: absolute;
   bottom: 2%;
@@ -94,7 +106,6 @@
       text-decoration: line-through;
       color: grey;
       font-size: 12px;
-
       font-weight: 400;
     }
     span {

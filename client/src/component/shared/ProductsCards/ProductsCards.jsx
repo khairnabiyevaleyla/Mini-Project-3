@@ -1,38 +1,94 @@
-import React from "react";
-import styles from "./style.module.scss";
+import React, { useState } from "react";
+import { Heart, Eye } from "lucide-react";
+import { useWishlist } from "@/context/WishlistContext";
+import ProductModal from "@/component/ProductModal/ProductModal";
 
 const ProductsCards = ({
+  id,
   mainimage,
   hoverimage,
   name,
   oldprice,
   finalprice,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const inWishlist = isInWishlist(id);
+
+  const handleWishlistClick = (e) => {
+    e.preventDefault();
+    if (inWishlist) {
+      removeFromWishlist(id);
+    } else {
+      addToWishlist({ id, mainimage, hoverimage, name, oldprice, finalprice });
+    }
+  };
+
+  const product = {
+    id,
+    mainimage,
+    hoverimage,
+    name,
+    oldprice,
+    finalprice,
+  };
+
   return (
-    <div>
-      <div>
-        <div className={styles.mainimage}>
-          <img src={mainimage} alt="product" />
-          <div className={styles.hoverimage}>
-            <img src={hoverimage} alt="product" />
+    <>
+      <div className="relative group">
+        <div className="relative overflow-hidden">
+          <img
+            src={mainimage}
+            alt={name}
+            className="w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+          />
+          <div className="absolute inset-0">
+            <img
+              src={hoverimage}
+              alt={name}
+              className="w-full h-auto opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            />
           </div>
-          <div className={styles.tag}>
-            <span>Sale</span>
+          <div className="absolute top-4 left-4">
+            <span className="bg-black text-white px-3 py-1 text-sm">Sale</span>
           </div>
-          <div className={styles.actions}>
-            <i className="ri-heart-3-line"></i>
-            <i className="ri-eye-line"></i>
+          <div className="absolute top-4 right-4 flex flex-col gap-2">
+            <button
+              onClick={handleWishlistClick}
+              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+            >
+              <Heart
+                size={22}
+                className={
+                  inWishlist ? "fill-black stroke-black" : "stroke-black"
+                }
+              />
+            </button>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors"
+            >
+              <Eye size={22} className="stroke-black" />
+            </button>
           </div>
-          <div className={styles.content}>
-            <h6>{name}</h6>
-            <p>
-              <span className={styles.oldprice}>${oldprice}</span>{" "}
-              <span>${finalprice}</span>
+          <div className="mt-4">
+            <h6 className="text-lg font-medium">{name}</h6>
+            <p className="flex gap-2 mt-1">
+              {oldprice && (
+                <span className="text-gray-500 line-through">${oldprice}</span>
+              )}
+              <span className="font-bold">${finalprice}</span>
             </p>
           </div>
         </div>
       </div>
-    </div>
+
+      <ProductModal
+        product={product}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 };
 

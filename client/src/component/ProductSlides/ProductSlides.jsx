@@ -62,22 +62,26 @@ const ProductSlides = () => {
           1280: { slidesPerView: 4, spaceBetween: 24 },
         }}
       >
-        {data?.data?.map((card) => (
-          <SwiperSlide key={card.id}>
-            <ProductsCards
-              name={card.name}
-              finalprice={card.finalprice}
-              oldprice={card.oldprice}
-              mainimage={`http://localhost:1337${card.mainimage?.url}`}
-              hoverimage={`http://localhost:1337${card.hoverimage?.url}`}
-            />
-            <div className="mx-5 my-5">
-              <BlackButton title="Quick add" />
-            </div>
-          </SwiperSlide>
-        ))}
-        <div className="flex justify-center items-center gap-4 my-10">
-          {" "}
+        {data?.data?.map((card) => {
+          const product = {
+            id: card.id,
+            name: card.name,
+            finalprice: card.finalprice,
+            oldprice: card.oldprice,
+            mainimage: `http://localhost:1337${card.mainimage?.url}`,
+            hoverimage: `http://localhost:1337${card.hoverimage?.url}`,
+          };
+
+          return (
+            <SwiperSlide key={card.id}>
+              <ProductsCards {...product} />
+              <div className="mx-5 my-5">
+                <BlackButton title="Quick add" product={product} />
+              </div>
+            </SwiperSlide>
+          );
+        })}
+        <div className="flex justify-center items-center gap-4 mb-10">
           <LightButton title="Shop All" />
         </div>
       </Swiper>

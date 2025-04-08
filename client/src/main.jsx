@@ -7,6 +7,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./i18n";
 import { CookiesProvider } from "react-cookie";
 import "remixicon/fonts/remixicon.css";
+import { WishlistProvider } from "@/context/WishlistContext";
+import { CartProvider } from "@/context/CartContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,7 +28,12 @@ createRoot(document.getElementById("root")).render(
     <QueryClientProvider client={queryClient}>
       <CookiesProvider>
         {" "}
-        <App />
+        <CartProvider>
+          {" "}
+          <WishlistProvider>
+            <App />
+          </WishlistProvider>
+        </CartProvider>
       </CookiesProvider>
       {ShowDevToolsInDevelopment}
     </QueryClientProvider>

@@ -5,6 +5,8 @@ import PrimaryCategories from "@/component/PrimaryCategories/PrimaryCategories";
 import SplitHeroSection from "@/component/shared/SplitHeroSection/SplitHeroSection";
 import ProductSlides from "@/component/ProductSlides/ProductSlides";
 import CollectionBanner from "@/component/CollectionBanner/CollectionBanner";
+import SocialMedia from "@/component/SocialMedia/SocialMedia";
+import PolicySection from "@/component/PolicySection/PolicySection";
 
 const HomeTemplate = () => {
   return (
@@ -35,6 +37,8 @@ const HomeTemplate = () => {
         title="BEST ESPRESSO EXPERIENCE"
         text="Our beans are carefully roasted to deliver a perfect balance of flavor and aroma, making every cup extraordinary."
       />
+      <SocialMedia />
+      <PolicySection />
     </>
   );
 };
