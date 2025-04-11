@@ -1,17 +1,35 @@
-import React from "react";
-import { RouterProvider } from "react-router";
+import { useEffect } from "react";
+import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
-import { useTranslation } from "react-i18next";
-import { CartProvider } from "@/context/CartContext";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase/index";
+import { useDispatch } from "react-redux";
+import { setUser, setLoading } from "./store/slices/authSlice";
 
-const App = () => {
-  const { t, i18n } = useTranslation();
+function App() {
+  const dispatch = useDispatch();
 
-  return (
-    <CartProvider>
-      <RouterProvider router={router} />
-    </CartProvider>
-  );
-};
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(
+          setUser({
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          })
+        );
+      } else {
+        dispatch(setUser(null));
+      }
+      dispatch(setLoading(false));
+    });
+
+    return () => unsubscribe();
+  }, [dispatch]);
+
+  return <RouterProvider router={router} />;
+}
 
 export default App;

@@ -67,6 +67,7 @@ const ProductPage = () => {
                 name={card.name}
                 finalprice={card.finalprice}
                 oldprice={card.oldprice}
+                LinkId={card.id}
               />
             ))}
         </div>

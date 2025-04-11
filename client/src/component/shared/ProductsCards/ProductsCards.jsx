@@ -3,7 +3,7 @@ import { Heart, Eye } from "lucide-react";
 import { useWishlist } from "@/context/WishlistContext";
 import ProductModal from "@/component/ProductModal/ProductModal";
 import BlackButton from "@/component/shared/Buttons/BlackButton";
-
+import { Link } from "react-router-dom";
 const ProductsCards = ({
   id,
   mainimage,
@@ -11,6 +11,7 @@ const ProductsCards = ({
   name,
   oldprice,
   finalprice,
+  LinkId,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
@@ -43,6 +44,7 @@ const ProductsCards = ({
             alt={name}
             className="w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
           />
+
           <div className="absolute inset-0">
             <img
               src={hoverimage}
@@ -50,9 +52,11 @@ const ProductsCards = ({
               className="w-full h-auto opacity-0 transition-opacity duration-300 group-hover:opacity-100"
             />
           </div>
+
           <div className="absolute top-4 left-4">
             <span className="bg-black text-white px-3 py-1 text-sm">Sale</span>
           </div>
+
           <div className="absolute top-4 right-4 flex flex-col gap-2">
             <button
               onClick={handleWishlistClick}
@@ -75,7 +79,10 @@ const ProductsCards = ({
         </div>
 
         <div className="mt-4 px-1 pb-4">
-          <h6 className="text-lg font-medium truncate">{name}</h6>
+          <Link to={`/products/${LinkId}`}>
+            {" "}
+            <h6 className="text-lg font-medium truncate">{name}</h6>{" "}
+          </Link>
           <p className="flex gap-2 mt-1">
             {oldprice && (
               <span className="text-gray-500 line-through">${oldprice}</span>

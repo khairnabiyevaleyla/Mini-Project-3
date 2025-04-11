@@ -11,6 +11,7 @@ import {
   Minus,
   Edit2,
 } from "lucide-react";
+import CheckoutButton from "@/components/CheckoutButton";
 
 const CartModal = () => {
   const { cart, isCartOpen, setIsCartOpen, getCartTotal, updateQuantity } =
@@ -21,7 +22,7 @@ const CartModal = () => {
 
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
   const subtotal = getCartTotal();
-  const discount = subtotal * 0.1; // 10% discount
+  const discount = subtotal * 0.1;
   const total = subtotal - discount;
 
   return (
@@ -134,7 +135,7 @@ const CartModal = () => {
           </div>
 
           <div className={style.buttons}>
-            <button className={style.checkoutButton}>Checkout</button>
+            <CheckoutButton />
             <button className={style.viewCartButton}>View Cart</button>
           </div>
         </div>

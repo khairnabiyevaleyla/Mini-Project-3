@@ -3,12 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 import style from "./style.module.scss";
 import { useTranslation } from "react-i18next";
 import { useCookies } from "react-cookie";
+import { useQuery } from "@tanstack/react-query";
+import { QueryKeys } from "@/constant/QuerieKeys";
+import { getApi } from "@/http/api";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [cookies, setCookie] = useCookies(["lang"]);
   const [lang, setLang] = useState(cookies.lang ?? "en");
   const location = useLocation();
+  const [term, setTerm] = useState("");
 
   useEffect(() => {
     i18n.changeLanguage(lang);
@@ -19,6 +23,16 @@ const Header = () => {
     setLang(newLang);
     setCookie("lang", newLang);
     i18n.changeLanguage(newLang);
+  };
+
+  const { data } = useQuery({
+    queryKey: [QueryKeys.products],
+    queryFn: () =>
+      getApi(`/products?populate=*&filters[name][$contains]=${term}`),
+  });
+
+  const handleChange = (e) => {
+    setTerm(e.target.value);
   };
 
   const LeftLinks = [
@@ -57,8 +71,13 @@ const Header = () => {
           <Link to="/">
             <div className={style.logo}>
               <img
-                src="https://new-ella.myshopify.com/cdn/shop/files/ELLA-white_230x.png?v=1733293883"
-                alt="logo"
+                src={
+                  isHomePage
+                    ? "https://new-ella.myshopify.com/cdn/shop/files/ELLA-white_230x.png?v=1733293883"
+                    : "https://new-ella.myshopify.com/cdn/shop/files/ELLA-black_230x.png?v=1733293883"
+                }
+                alt="ELLA"
+                className="h-8 object-contain"
               />
             </div>
           </Link>
@@ -69,8 +88,17 @@ const Header = () => {
               type="search"
               name="search"
               id="search"
-              placeholder={t("navbar.search")}
-              className={isHomePage ? style.homeSearch : style.defaultSearch}
+              placeholder="Search"
+              value={term}
+              onChange={handleChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && term.trim()) {
+                  e.preventDefault();
+                  window.location.href = `/search?query=${encodeURIComponent(
+                    term
+                  )}`;
+                }
+              }}
             />
           </div>
 

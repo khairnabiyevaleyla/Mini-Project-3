@@ -69,6 +69,7 @@ const ProductSlides = () => {
             oldprice: card.oldprice,
             mainimage: `http://localhost:1337${card.mainimage?.url}`,
             hoverimage: `http://localhost:1337${card.hoverimage?.url}`,
+            LinkId: card.id,
           };
 
           return (
